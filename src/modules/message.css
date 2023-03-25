@@ -1,0 +1,38 @@
+.messages-container {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.message {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .6);
+    padding: 15px;
+    border-radius: 16px;
+    color: #fff;
+    min-width: 200px;
+    max-width: 300px;
+    opacity: 0;
+    transition: opacity .3s ease-out;
+}
+
+.message.active {
+    opacity: 1;
+    transition: opacity .15s ease-in;
+}
+
+.message + * {
+    margin-top: 15px;
+}
+
+.message__title {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.message__text {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 18px;
+}
