@@ -1,42 +1,139 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
+:root {
+  --primary-color: #4666B1;
+  --main-text-color: #fff;
+  --border-color: #000;
+  --background: #cccccc;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
-    width: 100%;
-    padding: 2rem;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  background: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu {
-    position: fixed;
-    z-index: 1000;
-    width: 150px;
-    background: #1b1a1a;
-    border-radius: 5px;
-    display: none;
-    list-style: none;
+  position: fixed;
+  z-index: 1000;
+  width: 150px;
+  background: #fff;
+  border-radius: 5px;
+  display: none;
+  list-style: none;
 }
 
 .menu.open {
-    display: block;
+  display: block;
 }
 
 .menu .menu-item {
-    padding: 8px 10px;
-    font-size: 1rem;
-    color: #eee;
-    cursor: pointer;
-    transition: background-color .2s ease-in;
-    border-radius: inherit;
+  padding: 8px 10px;
+  font-size: 1rem;
+  color: #eee;
+  cursor: pointer;
+  transition: background-color .2s ease-in;
+  border-radius: inherit;
 }
 
 .menu .menu-item:hover {
-    background: #343434;
+  background: #343434;
+}
+
+
+/*=====================*/
+
+.list-item {
+  display: block;
+  list-style-type: none;
+  padding: 10px 15px;
+  background: var(--background);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  font-family: "Segoe UI", serif;
+  cursor: pointer;
+  color: #000;
+  text-align: left;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  transition: all ease-in-out 0.2s;
+}
+
+.list-item:hover {
+  background-color: var(--primary-color);
+  color: var(--main-text-color);
+  transform: translateX(-20px);
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.46),
+  inset -2px -2px 5px #101a2d, inset 2px 2px 5px #abc4f1;
+}
+
+.context-input {
+  width: 230px;
+  height: 39px;
+  font-size: 20px;
+  border: 1px solid #f6f6f5;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding-left: 10px;
+  font-family: 'Segoe UI', serif;
+  background: #c4c4c4;
+  text-shadow: 1px 1px 0 #fff;
+  box-shadow: inset 3px 3px 5px #555659, inset -2px -2px 5px #f1f1f1;
+  transition: all 0.2s ease-in-out;
+}
+
+.context-input:focus {
+  box-shadow: inset 1px 1px 2px #9a9ba2, inset -1px -1px 1px #f1f1f1;
+  outline: none;
+}
+
+.context-input::placeholder {
+  font-family: "Segoe UI", serif;
+}
+
+.save {
+  padding: 5px 20px 10px;
+  cursor: pointer;
+  font-family: 'Segoe UI', serif;
+  font-weight: 700;
+  font-size: 24px;
+  border: 2px solid #DCD4AF;
+  border-radius: 8px;
+  background: #076058;
+  color: #DCD4AF;
+  transition: all 0.3s;
+}
+
+.save:hover {
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.46);
+}
+
+.content {
+  width: 864px;
+  height: 564px;
+  padding: 30px;
+  margin: 120px 16px 0 0;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background: #9AA489;
+  transform: scale(0.5);
+  transition: all 0.2s;
+  opacity: 0;
+}
+
+.content-active {
+  transform: scale(1);
 }
