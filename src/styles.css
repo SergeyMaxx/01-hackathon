@@ -40,3 +40,114 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+a {
+color: #4003c1;
+text-decoration: none;
+}
+
+a:hover {
+color: #6f4db8;
+}
+
+.start {
+font-size: 1.5rem;
+}
+
+.restart {
+margin-top: 2%;
+font-size: 1.5rem;
+}
+
+h1 {
+line-height: 1.4;
+font-size: 4rem;
+}
+
+h3 {
+line-height: 1.4;
+font-size: 2rem;
+}
+
+.screen {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+width: 100vw;
+transition: margin 0.5s ease-out;
+}
+
+.screen.up {
+margin-top: -100vh;
+}
+
+.time-list {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+list-style: none;
+padding: 0;
+}
+
+.time-list li {
+margin: 10px;
+}
+
+.time-btn {
+background-color: transparent;
+border: 2px solid #1e015c;
+color: #4003c1;
+cursor: pointer;
+font-family: inherit;
+padding: .5rem 1rem;
+font-size: 1.5rem;
+}
+
+.time-btn:hover {
+border: 2px solid #6f4db8;;
+color: #6f4db8;
+}
+
+.hide {
+opacity: 0;
+}
+
+.primary {
+color: #6f4db8;;
+}
+
+.board {
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+position: relative;
+width: 80vw;
+height: 70vh;
+background: linear-gradient(118.38deg, #fff -4.6%, #b2b3b5 200.44%);
+box-shadow: -8px -8px 20px #2A333D, 10px 7px 20px #475462;
+border-radius: 30px;
+overflow: hidden;
+}
+
+.board a {
+color: #4003c1;
+}
+
+.board span{
+color:#55417a;
+}
+
+.figure {
+cursor: pointer;
+position: absolute; 
+}
+.circle {
+border-radius: 50%;
+}
+.oval {
+border-radius: 50%;
+}
+  
