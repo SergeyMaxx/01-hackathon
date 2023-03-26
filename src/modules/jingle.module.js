@@ -3,12 +3,14 @@ import {Module} from '../core/module';
 export class JingleModule extends Module {
   trigger() {
     super.trigger();
-    document.body.innerHTML = `
-      <button id="show-pokemon">Показать покемона</button>
-      <div id="pokemon-container"></div>
-    `;
-    const showPokemonButton = document.getElementById('show-pokemon');
-    const pokemonContainer = document.getElementById('pokemon-container');
+
+    const container = document.createElement('div');
+    const showPokemonButton = document.createElement('button');
+    showPokemonButton.textContent = 'Показать покемона';
+    showPokemonButton.classList.add('press')
+    const pokemonContainer = document.createElement('div');
+    container.append(showPokemonButton, pokemonContainer);
+    document.body.append(container)
 
     showPokemonButton.addEventListener('click', () => {
       const randomPokemonNumber = Math.floor(Math.random() * 898) + 1;
