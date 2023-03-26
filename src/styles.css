@@ -1,42 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
-    width: 100%;
-    padding: 2rem;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  background: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu {
-    position: fixed;
-    z-index: 1000;
-    width: 150px;
-    background: #1b1a1a;
-    border-radius: 5px;
-    display: none;
-    list-style: none;
+  position: fixed;
+  z-index: 1000;
+  width: 150px;
+  background: #fff;
+  border-radius: 5px;
+  display: none;
+  list-style: none;
 }
 
 .menu.open {
-    display: block;
+  display: block;
 }
 
 .menu .menu-item {
-    padding: 8px 10px;
-    font-size: 1rem;
-    color: #eee;
-    cursor: pointer;
-    transition: background-color .2s ease-in;
-    border-radius: inherit;
+  padding: 8px 10px;
+  font-size: 1rem;
+  color: #eee;
+  cursor: pointer;
+  transition: background-color .2s ease-in;
+  border-radius: inherit;
 }
 
 .menu .menu-item:hover {
-    background: #343434;
+  background: #343434;
+}
+
+
+/*=====================*/
+
+.list-item {
+  display: block;
+  list-style-type: none;
+  padding: 10px 15px;
+  background: #ccc;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  font-family: "Segoe UI", serif;
+  cursor: pointer;
+  color: #000;
+  text-align: left;
+  border-radius: 5px;
+  border: 1px solid #000;
+  transition: all ease-in-out 0.2s;
+}
+
+.list-item:hover {
+  background-color: #4666B1;
+  color: #fff;
+  transform: translateX(-20px);
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.46),
+  inset -2px -2px 5px #101a2d, inset 2px 2px 5px #abc4f1;
+}
+
+/*==============*/
+
+.body {
+  background-image: url(https://free4kwallpapers.com/uploads/originals/2020/08/07/collected-from-internet.-wallpaper_.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+#countdown {
+  margin-left: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#countdown .number {
+  font-size: 4.5vw;
+  position: relative;
+  padding-bottom: 2vw;
+}
+
+#countdown .number:not(:last-child) {
+  margin-right: 4vw;
+}
+
+#countdown .number:not(:last-child)::after {
+  content: ":";
+  position: absolute;
+  right: -2.5vw;
+  top: -0.5vw;
+}
+
+#countdown .text {
+  font-size: 1.3vw;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(0, 0, 0, 0.65);
 }
