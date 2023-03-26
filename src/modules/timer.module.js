@@ -32,7 +32,6 @@ export class TimerModule extends Module {
           current = `0${current}`;
         }
         timeEl.innerHTML = `00:${current}`;
-
       }
     }
 

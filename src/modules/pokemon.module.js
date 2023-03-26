@@ -1,6 +1,6 @@
 import {Module} from '../core/module';
 
-export class JingleModule extends Module {
+export class PokemonModule extends Module {
   trigger() {
     super.trigger();
 

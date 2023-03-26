@@ -1,15 +1,15 @@
 import {Menu} from './core/menu';
 import {BackgroundModule} from './modules/background.module';
-import {ClicksModule2} from './modules/clicks.module';
-import {JingleModule} from './modules/jingle.module';
+import {PokemonModule} from './modules/pokemon.module';
 import {Message} from './modules/message.module';
 import {TimerModule} from './modules/timer.module';
+import {ShapeModule} from './modules/shape.module';
 
 export class ContextMenu extends Menu {
   #toggleMenu;
   #options;
   #backgroundModule;
-  #clicksModule;
+  #figure;
   #jingleModule;
   #message;
   #timer;
@@ -19,8 +19,8 @@ export class ContextMenu extends Menu {
 
     this.#toggleMenu = true;
     this.#backgroundModule = new BackgroundModule(' ', ' ');
-    this.#clicksModule = new ClicksModule2(' ', ' ');
-    this.#jingleModule = new JingleModule(' ', ' ');
+    this.#figure = new ShapeModule(' ', ' ');
+    this.#jingleModule = new PokemonModule(' ', ' ');
     this.#message = new Message(' ', ' ');
     this.#timer = new TimerModule(' ', ' ');
     this.#options = [
@@ -34,6 +34,21 @@ export class ContextMenu extends Menu {
 
   // отображение меню
   #showMenu(x, y) {
+    const menuWidth = this.el.offsetWidth;
+    const menuHeight = this.el.offsetHeight;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    // проверяем, выходит ли меню за границы экрана по горизонтали
+    if (x + menuWidth > windowWidth) {
+      x -= menuWidth;
+    }
+
+    // проверяем, выходит ли меню за границы экрана по вертикали
+    if (y + menuHeight > windowHeight) {
+      y -= menuHeight;
+    }
+
     this.el.style.display = 'block';
     this.el.style.left = x + 'px';
     this.el.style.top = y + 'px';
@@ -70,7 +85,7 @@ export class ContextMenu extends Menu {
     this.el.addEventListener('click', ({target}) => {
       switch (target.textContent) {
         case 'Создать фигуру':
-          this.#clicksModule.trigger();
+          this.#figure.trigger();
           break;
         case 'Поменять цвет':
           this.#backgroundModule.trigger();
