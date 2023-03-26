@@ -130,3 +130,50 @@ body {
 .content-active {
   transform: scale(1);
 }
+
+/*==============*/
+
+.body {
+  background-image: url(https://free4kwallpapers.com/uploads/originals/2020/08/07/collected-from-internet.-wallpaper_.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+#countdown {
+  margin-left: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#countdown .number {
+  font-size: 4.5vw;
+  position: relative;
+  padding-bottom: 2vw;
+}
+
+#countdown .number:not(:last-child) {
+  margin-right: 4vw;
+}
+
+#countdown .number:not(:last-child)::after {
+  content: ":";
+  position: absolute;
+  right: -2.5vw;
+  top: -0.5vw;
+}
+
+#countdown .text {
+  font-size: 1.3vw;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(0, 0, 0, 0.65);
+}

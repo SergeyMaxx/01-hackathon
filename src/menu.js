@@ -68,7 +68,7 @@ export class ContextMenu extends Menu {
     this.el.addEventListener('click', ({target}) => {
       switch (target.textContent) {
         case 'Создать фигуру':
-          this.#clicksModule.trigger();
+          // this.#clicksModule.trigger();
           break;
         case 'Поменять цвет':
           this.#backgroundModule.trigger();
@@ -77,10 +77,10 @@ export class ContextMenu extends Menu {
 
           break;
         case 'Вызвать сообщение':
-          this.#message.trigger();
+          // this.#message.trigger();
           break;
         case 'Проиграть звук':
-          this.#jingleModule.trigger();
+          // this.#jingleModule.trigger();
           break;
         default:
           break;
