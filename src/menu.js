@@ -1,24 +1,31 @@
 import {Menu} from './core/menu';
 import {BackgroundModule} from './modules/background.module';
-import {ClicksModule} from './modules/clicks.module';
+import {ClicksModule2} from './modules/clicks.module';
+import {JingleModule} from './modules/jingle.module';
+import {Message} from './modules/message.module';
 
 export class ContextMenu extends Menu {
   #toggleMenu;
   #options;
   #backgroundModule;
   #clicksModule;
+  #jingleModule;
+  #message;
 
   constructor(selector) {
     super(selector);
 
     this.#toggleMenu = true;
     this.#backgroundModule = new BackgroundModule(' ', ' ');
-    this.#clicksModule = new ClicksModule(' ', ' ');
+    this.#clicksModule = new ClicksModule2(' ', ' ');
+    this.#jingleModule = new JingleModule(' ', ' ');
+    this.#message = new Message(' ', ' ');
     this.#options = [
       {text: 'Создать фигуру'},
       {text: 'Поменять цвет'},
       {text: 'Вызвать таймер'},
-      {text: 'Вызвать сообщение'}
+      {text: 'Вызвать сообщение'},
+      {text: 'Проиграть звук'}
     ];
   }
 
@@ -61,7 +68,7 @@ export class ContextMenu extends Menu {
     this.el.addEventListener('click', ({target}) => {
       switch (target.textContent) {
         case 'Создать фигуру':
-
+          this.#clicksModule.trigger();
           break;
         case 'Поменять цвет':
           this.#backgroundModule.trigger();
@@ -70,7 +77,10 @@ export class ContextMenu extends Menu {
 
           break;
         case 'Вызвать сообщение':
-          this.#clicksModule.trigger();
+          this.#message.trigger();
+          break;
+        case 'Проиграть звук':
+          this.#jingleModule.trigger();
           break;
         default:
           break;
