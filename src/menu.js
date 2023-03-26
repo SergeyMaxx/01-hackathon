@@ -3,6 +3,7 @@ import {BackgroundModule} from './modules/background.module';
 import {ClicksModule2} from './modules/clicks.module';
 import {JingleModule} from './modules/jingle.module';
 import {Message} from './modules/message.module';
+import {TimerModule} from './modules/timer.module';
 
 export class ContextMenu extends Menu {
   #toggleMenu;
@@ -11,6 +12,7 @@ export class ContextMenu extends Menu {
   #clicksModule;
   #jingleModule;
   #message;
+  #timer;
 
   constructor(selector) {
     super(selector);
@@ -20,6 +22,7 @@ export class ContextMenu extends Menu {
     this.#clicksModule = new ClicksModule2(' ', ' ');
     this.#jingleModule = new JingleModule(' ', ' ');
     this.#message = new Message(' ', ' ');
+    this.#timer = new TimerModule(' ', ' ');
     this.#options = [
       {text: 'Создать фигуру'},
       {text: 'Поменять цвет'},
@@ -68,19 +71,19 @@ export class ContextMenu extends Menu {
     this.el.addEventListener('click', ({target}) => {
       switch (target.textContent) {
         case 'Создать фигуру':
-          // this.#clicksModule.trigger();
+          this.#clicksModule.trigger();
           break;
         case 'Поменять цвет':
           this.#backgroundModule.trigger();
           break;
         case 'Вызвать тайме':
-
+          this.#timer.trigger();
           break;
         case 'Вызвать сообщение':
-          // this.#message.trigger();
+          this.#message.trigger();
           break;
         case 'Проиграть звук':
-          // this.#jingleModule.trigger();
+          this.#jingleModule.trigger();
           break;
         default:
           break;
