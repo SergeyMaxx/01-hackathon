@@ -64,7 +64,6 @@ export class ContextMenu extends Menu {
         this.#toggleMenu = !this.#toggleMenu;
       }
       this.#showMenu(e.pageX, e.pageY); // отображаем контекстное меню в месте правого клика
-
     });
 
     // добавляем обработчик клика на элементы меню
