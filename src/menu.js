@@ -28,7 +28,7 @@ export class ContextMenu extends Menu {
       {text: 'Поменять цвет'},
       {text: 'Вызвать таймер'},
       {text: 'Вызвать сообщение'},
-      {text: 'Проиграть звук'}
+      {text: 'Показать покемон'}
     ];
   }
 
