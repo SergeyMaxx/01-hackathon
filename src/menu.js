@@ -75,13 +75,13 @@ export class ContextMenu extends Menu {
         case 'Поменять цвет':
           this.#backgroundModule.trigger();
           break;
-        case 'Вызвать тайме':
+        case 'Вызвать таймер':
           this.#timer.trigger();
           break;
         case 'Вызвать сообщение':
-          this.#message.trigger();
+          this.#message.trigger('Я frontend разработчик', 'мой первый хакатон');
           break;
-        case 'Проиграть звук':
+        case 'Показать покемон':
           this.#jingleModule.trigger();
           break;
         default:

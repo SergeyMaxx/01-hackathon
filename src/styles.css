@@ -1,43 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
-    width: 100%;
-    padding: 2rem;
-    position: relative;
+  background-image: url(https://free4kwallpapers.com/uploads/originals/2020/08/07/collected-from-internet.-wallpaper_.png);
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
 }
 
 .menu {
-    position: fixed;
-    z-index: 1000;
-    width: 150px;
-    background: #1b1a1a;
-    border-radius: 5px;
-    display: none;
-    list-style: none;
+  position: fixed;
+  z-index: 1000;
+  width: 150px;
+  background: #1b1a1a;
+  border-radius: 5px;
+  display: none;
+  list-style: none;
 }
 
 .menu.open {
-    display: block;
+  display: block;
 }
 
 .menu .menu-item {
-    padding: 8px 10px;
-    font-size: 1rem;
-    color: #eee;
-    cursor: pointer;
-    transition: background-color .2s ease-in;
-    border-radius: inherit;
+  padding: 8px 10px;
+  font-size: 1rem;
+  color: #eee;
+  cursor: pointer;
+  transition: background-color .2s ease-in;
+  border-radius: inherit;
 }
 
 .menu .menu-item:hover {
-    background: #343434;
+  background: #343434;
+}
+
+/*===============*/
+
+.list-item {
+  display: block;
+  list-style-type: none;
+  padding: 10px 15px;
+  background: #ccc;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  font-family: "Segoe UI", serif;
+  cursor: pointer;
+  color: #000;
+  text-align: left;
+  border-radius: 5px;
+  border: 1px solid #000;
+  transition: all ease-in-out 0.2s;
+}
+
+.list-item:hover {
+  background-color: #4666B1;
+  color: #fff;
+  transform: translateX(-20px);
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.46),
+  inset -2px -2px 5px #101a2d, inset 5px 5px 10px #abc4f1;
+}
+
+/*======================*/
+
+.body {
+  display: flex;
+  justify-content: center;
+  margin-top: 350px;
+}
+
+.timer {
+  font-family: "Segoe UI",serif;
+  font-weight: 900;
+  font-size: 100px;
+  color: #3a4973;
+  text-shadow: 5px -5px 10px #000;
+  transition: all 0.5s;
+}
+
+.timer-active {
+  transform: scale(2);
+}
+
+.press {
+  padding: 5px 20px 10px;
+  cursor: pointer;
+  font-family: 'Segoe UI', serif;
+  font-weight: 700;
+  font-size: 24px;
+  border: 2px solid #DCD4AF;
+  border-radius: 8px;
+  background: #076058;
+  color: #DCD4AF;
+  transition: all 0.3s;
+}
+
+.press:hover {
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.46);
+}
+
+.hide {
+  display: none;
+}
+
+.pokemon-image {
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
 }
