@@ -7,6 +7,7 @@ export class TimerModule extends Module {
 
     //Основа таймера
     document.body.innerHTML = `
+
       <div id="countdown">
         <div class="number">
           <span class="days time"></span>
