@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
-:root {
-  --primary-color: #4666B1;
-  --main-text-color: #fff;
-  --border-color: #000;
-  --background: #cccccc;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -59,7 +52,7 @@ body {
   display: block;
   list-style-type: none;
   padding: 10px 15px;
-  background: var(--background);
+  background: #ccc;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.4;
@@ -68,13 +61,13 @@ body {
   color: #000;
   text-align: left;
   border-radius: 5px;
-  border: 1px solid var(--border-color);
+  border: 1px solid #000;
   transition: all ease-in-out 0.2s;
 }
 
 .list-item:hover {
-  background-color: var(--primary-color);
-  color: var(--main-text-color);
+  background-color: #4666B1;
+  color: #fff;
   transform: translateX(-20px);
   box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.46),
   inset -2px -2px 5px #101a2d, inset 2px 2px 5px #abc4f1;
