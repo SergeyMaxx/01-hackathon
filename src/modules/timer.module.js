@@ -14,7 +14,7 @@ export class TimerModule extends Module {
     div.append(timeEl, btn)
     document.body.append(div);
 
-    let time = 10;
+    let time = '05';
 
     btn.addEventListener('click', () => {
       setInterval(decreaseTime, 1000);
@@ -24,11 +24,11 @@ export class TimerModule extends Module {
     });
 
     function decreaseTime() {
-      if (time === 0) {
+      if (+time === 0) {
         timeEl.classList.add('hide')
       } else {
         let current = --time;
-        if (current < 10) {
+        if (current < 5) {
           current = `0${current}`;
         }
         timeEl.innerHTML = `00:${current}`;
