@@ -1,9 +1,10 @@
-import {Menu} from './core/menu';
-import {BackgroundModule} from './modules/background.module';
-import {PokemonModule} from './modules/pokemon.module';
-import {Message} from './modules/message.module';
-import {TimerModule} from './modules/timer.module';
-import {ShapeModule} from './modules/shape.module';
+import { Menu } from './core/menu';
+import { BackgroundModule } from './modules/background.module';
+import { PokemonModule } from './modules/pokemon.module';
+import { Message } from './modules/message.module';
+import { TimerModule } from './modules/timer.module';
+import { ShapeModule } from './modules/shape.module';
+import { ClicksModule } from './modules/clicks.module';
 
 export class ContextMenu extends Menu {
   #toggleMenu;
@@ -11,6 +12,7 @@ export class ContextMenu extends Menu {
   #backgroundModule;
   #figure;
   #jingleModule;
+  #clicksModule;
   #message;
   #timer;
 
@@ -21,14 +23,16 @@ export class ContextMenu extends Menu {
     this.#backgroundModule = new BackgroundModule(' ', ' ');
     this.#figure = new ShapeModule(' ', ' ');
     this.#jingleModule = new PokemonModule(' ', ' ');
+    this.#clicksModule = new ClicksModule(' ', ' ');
     this.#message = new Message(' ', ' ');
     this.#timer = new TimerModule(' ', ' ');
     this.#options = [
-      {text: 'Создать фигуру'},
-      {text: 'Поменять цвет'},
-      {text: 'Вызвать таймер'},
-      {text: 'Вызвать сообщение'},
-      {text: 'Показать покемон'}
+      { text: 'Создать фигуру' },
+      { text: 'Поменять цвет' },
+      { text: 'Вызвать таймер' },
+      { text: 'Вызвать сообщение' },
+      { text: 'Показать покемон' },
+      { text: 'Монетка' },
     ];
   }
 
@@ -70,10 +74,10 @@ export class ContextMenu extends Menu {
   // добавляем обработчик правого клика на контейнер
   open() {
     super.open();
-    document.addEventListener('contextmenu', e => {
+    document.addEventListener('contextmenu', (e) => {
       e.preventDefault();
       if (this.#toggleMenu) {
-        this.#options.forEach(i => {
+        this.#options.forEach((i) => {
           this.el.append(ContextMenu.#createElement('li', 'list-item', i.text));
         });
         this.#toggleMenu = !this.#toggleMenu;
@@ -82,7 +86,7 @@ export class ContextMenu extends Menu {
     });
 
     // добавляем обработчик клика на элементы меню
-    this.el.addEventListener('click', ({target}) => {
+    this.el.addEventListener('click', ({ target }) => {
       switch (target.textContent) {
         case 'Создать фигуру':
           this.#figure.trigger();
@@ -98,6 +102,9 @@ export class ContextMenu extends Menu {
           break;
         case 'Показать покемон':
           this.#jingleModule.trigger();
+          break;
+        case 'Монетка':
+          this.#clicksModule.trigger();
           break;
         default:
           break;

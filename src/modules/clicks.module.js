@@ -1,5 +1,9 @@
-import {Module} from '../core/module';
+import { Module } from '../core/module';
 
-export class ClicksModule2 extends Module {
-
+export class ClicksModule extends Module {
+  trigger() {
+    var audio = new Audio();
+    audio.src = '../media/mario_coin_sound.mp3';
+    audio.autoplay = true;
+  }
 }
